@@ -108,7 +108,7 @@ check_StringLoop:
    move $a0, $t3
    move $a0, $t8
    li $t8, 10              
-   beq $t3, $t8, base_converter
+   beq $t3, $zero, base_converter
    slti $t4, $t3, 48        
    bne $t4, $zero, base_error
    slti $t4, $t3, 58       
@@ -119,7 +119,7 @@ check_StringLoop:
    bne $t4, $zero, Increment
    slti $t4, $t3, 97      
    bne $t4, $zero, base_error 
-   slti $t4, $t3, 121      
+   slti $t4, $t3, 118     
    bne $t4, $zero, Increment
    bgt $t3, 117, base_error 
    li $t8, 10              

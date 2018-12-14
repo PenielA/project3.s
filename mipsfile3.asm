@@ -9,6 +9,8 @@ main:
    la $a0, user_Input  
    li $a1, 1000
    syscall 
+   addi $sp, $sp, -8
+   sw $a0, 4($sp)
 removespaceinfront:
    li $t8, 32                              
    lb $t7, 0($a0)   

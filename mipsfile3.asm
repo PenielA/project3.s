@@ -27,7 +27,11 @@ userInput_loop:
    jal removespaceafter
    jal checkLength
    lw $ra, 4($sp) 
-   lw $t8, 0($sp) 
+   lw $t8, 0($sp)
+   addi $sp, $sp, 8 
+   addi $sp, $sp, -4
+   sw $t8, 0($sp)   
+   jr $ra 
 removespaceinfront:
    li $t8, 32                              
    lb $t7, 0($a0)   

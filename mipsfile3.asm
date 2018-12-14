@@ -11,6 +11,8 @@ main:
    syscall 
    addi $sp, $sp, -8
    sw $a0, 4($sp)
+   sw $ra, 0($sp) 
+   jal userInput_loop
 removespaceinfront:
    li $t8, 32                              
    lb $t7, 0($a0)   

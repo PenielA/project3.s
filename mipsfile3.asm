@@ -72,8 +72,11 @@ end_removespaceafter:
    sb $zero, 0($t4)    
    jr $ra
 checkLength:
-   li $t0, -1
+   li $t0, 0
    add $a0, $t7, $zero
+   lb $t2, 0($a0)
+   addi $t2, $t2, -10    
+   beq $t2, $zero, null_error 
 checkLength_Loop:
    lb $t2, 0($a0)
    or $t1, $t2, $t0

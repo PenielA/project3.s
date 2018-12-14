@@ -24,6 +24,10 @@ userInput_loop:
    addi $sp, $sp, -4
    sw $ra, 0($sp) 
    jal remove_leading_spaces
+   jal removespaceafter
+   jal checkLength
+   lw $ra, 4($sp) 
+   lw $t8, 0($sp) 
 removespaceinfront:
    li $t8, 32                              
    lb $t7, 0($a0)   

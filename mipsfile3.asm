@@ -13,6 +13,8 @@ main:
    sw $a0, 4($sp)
    sw $ra, 0($sp) 
    jal userInput_loop
+   lw $t8, 0($sp)  
+   addi $sp, $sp, 4 
 removespaceinfront:
    li $t8, 32                              
    lb $t7, 0($a0)   

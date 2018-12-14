@@ -15,6 +15,11 @@ main:
    jal userInput_loop
    lw $t8, 0($sp)  
    addi $sp, $sp, 4 
+   addi $sp, $sp, -8 
+   sw $t8, 4($sp) 
+   sw $ra, 0($sp)
+   jal Totalsum
+   j end
 removespaceinfront:
    li $t8, 32                              
    lb $t7, 0($a0)   

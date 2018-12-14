@@ -134,7 +134,7 @@ base_error:
    j end
 base_converter:
    move $a0, $t7  
-   li $t1, 10
+   li $t2, 10
    li $t8, 0  
    add $s7, $s7, $t0
    addi $s7, $s7, -1 
@@ -192,8 +192,12 @@ Base_raised_toOne:
 Base_raised_toZero:
    li $s4, 1
    mult $s5, $s4
-   mflo $s7
-   add $t8, $t8, $s7
+   mflo $s0
+   add $t8, $t8, $s0
+Obtained_value:
+   addi $sp, $sp, -4
+   sw $t8, 0($sp)     
+   jr $ra 
 Totalsum:
    li $v0, 1
    move $a0, $t8

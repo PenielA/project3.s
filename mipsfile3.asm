@@ -200,8 +200,9 @@ Obtained_value:
    jr $ra 
 Totalsum:
    li $v0, 1
-   move $a0, $t8
+   lw $a0, 4($sp) 
    syscall
+   jr $ra
 end:
    li $v0,10      
    syscall       

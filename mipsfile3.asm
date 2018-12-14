@@ -20,6 +20,10 @@ main:
    sw $ra, 0($sp)
    jal Totalsum
    j end
+userInput_loop:
+   addi $sp, $sp, -4
+   sw $ra, 0($sp) 
+   jal remove_leading_spaces
 removespaceinfront:
    li $t8, 32                              
    lb $t7, 0($a0)   

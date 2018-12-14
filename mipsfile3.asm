@@ -35,12 +35,11 @@ userInput_loop:
 remove_leading_spaces:
    li $t8, 32                      
    lw $a0, 8($sp)
-removespaceinfront:
-   li $t8, 32                              
+removespaceinfront:                            
    lb $t7, 0($a0)   
    beq $t8, $t7, removefirstcharacter     
    move $t7, $a0                          
-   j removespaceafter
+   jr $ra
 removefirstcharacter:
    addi $a0, $a0, 1
    j removespaceinfront

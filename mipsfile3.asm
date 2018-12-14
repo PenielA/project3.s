@@ -50,7 +50,7 @@ removespaceafter:
    li $t8, 0  
 removespaceafter_loop:
    add $t4, $t2, $t8
-   addi $t4, $t4, -100
+   addi $t4, $t4, -1000
    beqz $t4, end_removespaceafter        
    add $t4, $t8, $a0
    lb $t4, 0($t4)          
@@ -69,7 +69,8 @@ end_removespaceafter:
    add $t4, $zero, $a0 
    add $t4, $t4, $t1 
    addi $t4, $t4, 1  
-   j checkLength
+   sb $zero, 0($t4)    
+   jr $ra
 checkLength:
    li $t0, -1
    add $a0, $t7, $zero
